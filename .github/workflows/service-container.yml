@@ -39,10 +39,10 @@ jobs:
           python-version: '3.x'
 
       - name: Install dependencies
-        run: pip install -r /advanced-github-actions/Ch01/01_02-service-containers/requirements.txt
+        run: pip install -r /Ch01/01_02-service-containers/requirements.txt
 
       - name: Seed the database
-        run: python /advanced-github-actions/Ch01/01_02-service-containers/seed_database.py
+        run: python /Ch01/01_02-service-containers/seed_database.py
         env:
           DATABASE_HOST: localhost
           DATABASE_NAME: ${{ env.DATABASE_NAME }}
