@@ -7,7 +7,7 @@ on:
     tags:
       - "v*"
 
-# Automatically create a GitHub Release, with release details specified (the relevant commits)
+# Automatically create a GitHub Release, with release details specified (the relevant commits.)
 jobs:
   release:
     name: "Release"
