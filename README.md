@@ -1,3 +1,4 @@
+[![Mixed inputs](https://github.com/judeigwe/advanced-github-actions/actions/workflows/service-container.yml/badge.svg?branch=development)](https://github.com/judeigwe/advanced-github-actions/actions/workflows/service-container.yml)
 # Advanced GitHub Actions
 This is the repository for the LinkedIn Learning course Advanced GitHub Actions. The full course is available from [LinkedIn Learning][lil-course-url].
 
