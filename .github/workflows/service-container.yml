@@ -1,4 +1,4 @@
-name: Seed Database
+#name: Seed Database
 # on:
 #   push:
 #     branches: [ main, development ]
@@ -49,35 +49,29 @@ name: Seed Database
 #           DATABASE_USER: ${{ env.DATABASE_USER }}
 #           DATABASE_PASS: ${{ env.DATABASE_PASS }}
 #           DATABASE_PORT: ${{ env.DATABASE_PORT }}
+name: Mixed inputs
+
 on:
   workflow_dispatch:
     inputs:
-      logLevel:
-        description: 'Log level'
-        required: true
-        default: 'warning'
+      name:
         type: choice
-        options:
-          - info
-          - warning
-          - debug
-      print_tags:
-        description: 'True to print to STDOUT'
+        description: Who to greet
+        options: 
+        - monalisa
+        - cschleiden
+      message:
         required: true
+      use-emoji:
         type: boolean
-      tags:
-        description: 'Test scenario tags'
-        required: true
-        type: string
+        description: Include  emojis
       environment:
-        description: 'Environment to run tests against'
         type: environment
-        required: true
 
 jobs:
-  print-tag:
+  greet:
     runs-on: ubuntu-latest
-    if:  ${{ inputs.print_tags }} 
+
     steps:
-      - name: Print the input tag to STDOUT
-        run: echo  The tags are ${{ inputs.tags }} 
+    - name: Send greeting
+      run: echo "${{ github.event.inputs.message }} ${{ fromJSON('["", ""]')[github.event.inputs.use-emoji == 'true'] }} ${{ github.event.inputs.name }}" 
