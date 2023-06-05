@@ -80,7 +80,7 @@ jobs:
     - id: env-setup
       run: |
         {
-          "env_token=production"
+          "env_token=dev"
           "env_domain=example.com"
         } >> $GITHUB_OUTPUT
 
